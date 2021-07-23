@@ -5,9 +5,9 @@
 					
 
  -Ferramentas/Linguagens usadas :
-     * Angular (12.1)
-     * NestJs  (8.0)
-     * PostgresSQL (13.3)
+     - Angular (12.1)
+     - NestJs  (8.0)
+     - PostgresSQL (13.3)
 					
 # Como Usar
 

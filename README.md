@@ -25,7 +25,7 @@ Ferramentas/Linguagens usadas:
 
 * Back-end
 
-    * No caminho relativo da pasta AvançoDesafio/postApi/post-api abrir o prompt de comando como administrador e digitar os seguintes comandos: 
+    * No caminho relativo da pasta Avan-oDesafio-main/postApi/post-api abrir o prompt de comando como administrador e digitar os seguintes comandos: 
     
         - npm install
         - npm start
@@ -34,7 +34,7 @@ Ferramentas/Linguagens usadas:
 
 * Front-end
 
-   * No caminho relativo da pasta AvançoDesafio/avancoDesafio abrir o prompt de comando como administrador e digitar os seguintes comandos:
+   * No caminho relativo da pasta Avan-oDesafio-main/avancoDesafio abrir o prompt de comando como administrador e digitar os seguintes comandos:
     
       - npm install
       - ng serve --open

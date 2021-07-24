@@ -12,23 +12,7 @@ Ferramentas/Linguagens usadas:
 					
 # Como usar a aplicação localmente :
 
-* Front-end
-
-   * No caminho relativo da pasta AvançoDesafio/avancoDesafio abrir o prompt de comando como administrador e digitar os seguintes comandos:
-    
-      - npm install
-      - ng serve --open
-      
-
-* Back-end
-
-    * No caminho relativo da pasta AvançoDesafio/postApi/post-api abrir o prompt de comando como administrador e digitar os seguintes comandos: 
-    
-        - npm install
-        - npm start
-        
-        
- * Data-base(postgresSQL):
+* Data-base(postgresSQL):
  
     * instalar o postgresSQL : https://www.postgresql.org/download/
     * instalar o pgAdmin4 para gerenciamento do banco de dados : https://www.pgadmin.org/download/
@@ -37,7 +21,26 @@ Ferramentas/Linguagens usadas:
        - Depois dentro de Databases, criar um database nomeado "blog-app" 
        - Dentro de Login/Groups Roles, criar um novo Login/Group Role nomeado como "blog-user" com todos os privilégios marcados e o password como "123"
        
+
+* Back-end
+
+    * No caminho relativo da pasta AvançoDesafio/postApi/post-api abrir o prompt de comando como administrador e digitar os seguintes comandos: 
+    
+        - npm install
+        - npm start
+        
 					
-					
+
+* Front-end
+
+   * No caminho relativo da pasta AvançoDesafio/avancoDesafio abrir o prompt de comando como administrador e digitar os seguintes comandos:
+    
+      - npm install
+      - ng serve --open
+      
+
+
+        
+ 
 		
  

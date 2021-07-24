@@ -1,0 +1,8 @@
+.tollbar {
+        width: 70%;
+}
+
+button{
+        position: absolute;
+        right: 20px;
+}

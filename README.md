@@ -15,6 +15,7 @@ Ferramentas/Linguagens usadas:
 * Data-base(postgresSQL):
  
     * instalar o postgresSQL : https://www.postgresql.org/download/
+    * o postgres13 ja vem com uma opção de instalar o pgAdmin4 em seu instalador
     * instalar o pgAdmin4 para gerenciamento do banco de dados : https://www.pgadmin.org/download/
     * Dentro do pgAdmin4 criar uma nova conexão :
     

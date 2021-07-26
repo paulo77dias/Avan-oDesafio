@@ -1,3 +1,12 @@
+<mat-toolbar color="primary" class="tolbar" >
+
+  
+        <span>Post Application</span>
+        
+        <button (click)="logout()" class="btn">Logout</button>
+       
+    
+</mat-toolbar>
 <div class="m-5">
         <div class="row m-3">
                 <ng-container *ngIf="(getPostList() | async) as postlistItens">

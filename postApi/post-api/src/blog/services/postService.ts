@@ -1,3 +1,4 @@
+import { UserPostEntity } from './../entities/userPostEntity';
 
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";

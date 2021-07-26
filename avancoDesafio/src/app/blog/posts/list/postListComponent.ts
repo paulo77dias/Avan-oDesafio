@@ -9,6 +9,7 @@ import { finalize } from 'rxjs/operators';
 import * as _ from 'lodash';
 import { EditPostDto } from '../services/dataModel/editPostDto';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { AuthService } from 'src/app/common/auth/services/authService';
 
 
 
@@ -35,7 +36,8 @@ export class PostListComponent implements OnInit{
     constructor(
             private postservice:PostService,
             private matDialog:MatDialog,
-            private snackBar:MatSnackBar
+            private snackBar:MatSnackBar,
+            private token:AuthService
             ){}
 
     ngOnInit(){
@@ -44,6 +46,11 @@ export class PostListComponent implements OnInit{
         .pipe(finalize(()=>this.isLoading = false))
         .subscribe((postListItens)=> this.postListSubject.next(postListItens));
     }
+
+    public logout(){
+       
+        this.token.logout();
+}
 
     public getPostList():Observable<PostDto[]>{
             return this.postListSubject.asObservable();

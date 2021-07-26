@@ -33,6 +33,10 @@ export class AuthService {
         this.router.navigate(['login']);
     }
 
+    public getToken():any{
+            return localStorage.getItem('CurrentUser')
+    }
+
     private cleanToken() {
         localStorage.removeItem('CurrentUser');
     }

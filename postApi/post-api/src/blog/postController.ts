@@ -1,5 +1,6 @@
+import { PostUserService } from './services/postUserService';
 import { EditPostDto } from './dtos/editPostDto';
-import { Body, Controller, Delete, Get, Param, Post, Put } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Post, Put, Req } from "@nestjs/common";
 
 import { Observable } from "rxjs";
 
@@ -7,11 +8,13 @@ import { CreatePostDto } from "./dtos/createpostDto";
 import { PostDto } from "./dtos/postDto";
 import { PostEntity } from "./entities/postEntity";
 import { PostService } from './services/postService';
+import { UserPostAdd } from './dtos/userPostAdd';
+import { UserPost } from './dtos/userPost';
 
 @Controller('posts')
 export class PostController {
 
-    constructor(private postService:PostService){}
+    constructor(private postService:PostService,private postUserService : PostUserService){}
 
     @Get()
     findAll() : Observable<PostEntity[]>{
@@ -23,6 +26,13 @@ export class PostController {
         return this.postService.create(createpostDto);
     }
 
+    @Post('/register')
+    createUser(@Body() creatUser:UserPostAdd):Promise<UserPost>{
+
+        return this.postUserService.create(creatUser)
+    }
+
+
     @Put()
     edit(@Body() editPostDto:EditPostDto):Promise<PostDto >{
         return this.postService.edit(editPostDto);
@@ -31,6 +41,11 @@ export class PostController {
     @Delete(':id')
     delete(@Param() postId: number){
         this.postService.delete(postId );
+    }
+
+    @Get('/teste/:teste')
+    teste(@Param() teste?: string):string{
+        return 'hello '+ teste['teste'];
     }
     
 }

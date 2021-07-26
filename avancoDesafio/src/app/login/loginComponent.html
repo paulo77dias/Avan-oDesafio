@@ -1,4 +1,4 @@
-<div class="container-fluid mt-5">
+<div class="container mt-5">
         <div class="row align-content-center d-flex justify-content-center row bordered">
             <div class="col-4 ">
                 <mat-card>
@@ -35,6 +35,7 @@
                                     (click)="onSubmit(form)"
                                     class="w-100">Submit</button>
                         </mat-card-actions>
+                        <a [routerLink]="['/register']">Not registered yet ?</a>
                     </form>
                     <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
                 </mat-card>

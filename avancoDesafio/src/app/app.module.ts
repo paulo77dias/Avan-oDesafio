@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BlogModule } from './blog/blogModule';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './common/auth/authModule';
+import { RegisterModule } from './register/registerModule';
 
 
 
@@ -21,10 +22,12 @@ import { AuthModule } from './common/auth/authModule';
     BrowserModule,
     BrowserAnimationsModule,
     CommonMaterialModule,
+    RegisterModule,
     LoginModule,
     BlogModule,
     AppRoutingModule,
-    AuthModule
+    AuthModule,
+    RegisterModule
     
   
 

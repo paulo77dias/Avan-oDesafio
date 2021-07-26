@@ -1,3 +1,5 @@
+import { PostUserService } from './services/postUserService';
+import { UserPostEntity } from './entities/userPostEntity';
 import { PostController } from './postController';
 import { PostService } from './services/postService';
 import { Module } from '@nestjs/common';
@@ -6,7 +8,7 @@ import { PostEntity } from './entities/postEntity';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([PostEntity]),
+    TypeOrmModule.forFeature([PostEntity,UserPostEntity]),
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
@@ -14,12 +16,12 @@ import { PostEntity } from './entities/postEntity';
       username: 'blog-user',
       password: '123',
       database: 'blog-app',
-      entities: [PostEntity],
+      entities: [PostEntity,UserPostEntity],
       synchronize: true,
     }),
    
   ],
   controllers: [PostController],
-  providers: [PostService],
+  providers: [PostService,PostUserService],
 })
 export class BlogModule {}

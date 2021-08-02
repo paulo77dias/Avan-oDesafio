@@ -1,3 +1,5 @@
+import { AuthService } from './auth/auth.service';
+import { AuthModule } from './auth/auth.module';
 import { PostUserService } from './services/postUserService';
 import { UserPostEntity } from './entities/userPostEntity';
 import { PostController } from './postController';
@@ -8,6 +10,7 @@ import { PostEntity } from './entities/postEntity';
 
 @Module({
   imports: [
+    AuthModule,
     TypeOrmModule.forFeature([PostEntity,UserPostEntity]),
     TypeOrmModule.forRoot({
       type: 'postgres',

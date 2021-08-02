@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ConfirmationDialogComponent } from './../../dialogs/confirmationDialogComponent';
 import { CreatePostDialogComponent } from './../dialogs/createPostDialogComponent';
 import { PostDto } from '../services/dataModel/postDto';
@@ -9,7 +10,7 @@ import { finalize } from 'rxjs/operators';
 import * as _ from 'lodash';
 import { EditPostDto } from '../services/dataModel/editPostDto';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { AuthService } from 'src/app/common/auth/services/authService';
+
 
 
 
@@ -37,7 +38,8 @@ export class PostListComponent implements OnInit{
             private postservice:PostService,
             private matDialog:MatDialog,
             private snackBar:MatSnackBar,
-            private token:AuthService
+            private route:Router
+            
             ){}
 
     ngOnInit(){
@@ -48,8 +50,8 @@ export class PostListComponent implements OnInit{
     }
 
     public logout(){
-       
-        this.token.logout();
+       localStorage.removeItem('CurrentUser')
+       this.route.navigate(['login'])
 }
 
     public getPostList():Observable<PostDto[]>{

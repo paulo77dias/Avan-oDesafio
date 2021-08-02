@@ -1,5 +1,4 @@
-import { LoginRoutes } from './login/loginComponentRoutes';
-import { BlogGuard } from './blog/guards/blogGuard';
+
 import { LoginModule } from './login/loginModule';
 import { CommonMaterialModule } from './common/material/commonMaterialModules';
 import { NgModule } from '@angular/core';
@@ -9,7 +8,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BlogModule } from './blog/blogModule';
 import { AppRoutingModule } from './app-routing.module';
-import { AuthModule } from './common/auth/authModule';
+
 import { RegisterModule } from './register/registerModule';
 
 
@@ -26,8 +25,7 @@ import { RegisterModule } from './register/registerModule';
     LoginModule,
     BlogModule,
     AppRoutingModule,
-    AuthModule,
-    RegisterModule
+   RegisterModule
     
   
 

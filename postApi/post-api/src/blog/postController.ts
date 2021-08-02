@@ -1,6 +1,6 @@
 import { PostUserService } from './services/postUserService';
 import { EditPostDto } from './dtos/editPostDto';
-import { Body, Controller, Delete, Get, Param, Post, Put, Req } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Post, Put, Request, UnauthorizedException } from "@nestjs/common";
 
 import { Observable } from "rxjs";
 
@@ -10,11 +10,16 @@ import { PostEntity } from "./entities/postEntity";
 import { PostService } from './services/postService';
 import { UserPostAdd } from './dtos/userPostAdd';
 import { UserPost } from './dtos/userPost';
+import { AuthService } from './auth/auth.service';
+import { reject } from 'lodash';
+import { error } from 'console';
 
 @Controller('posts')
 export class PostController {
 
-    constructor(private postService:PostService,private postUserService : PostUserService){}
+    constructor(private postService:PostService,
+                private postUserService : PostUserService,
+                private authService: AuthService){}
 
     @Get()
     findAll() : Observable<PostEntity[]>{
@@ -47,5 +52,23 @@ export class PostController {
     teste(@Param() teste?: string):string{
         return 'hello '+ teste['teste'];
     }
+
+    @Post('/auth/login')
+    async login(@Request() req) {
+
+       return this.postUserService.login(req.body)
+        .then((res)=>{
+            if (res == undefined) {
+                throw  new UnauthorizedException();
+            }else{
+                
+            return this.authService.login(req.body)
+        }
+    })
+            
+
+        
     
+    }
+
 }

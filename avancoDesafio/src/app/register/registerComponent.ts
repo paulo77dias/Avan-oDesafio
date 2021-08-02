@@ -22,9 +22,9 @@ export class RegisterComponent{
         public onSubmit(form: NgForm) {
                 if (form.value.password == this.confirmPassword) {
                     this.registerService.create(this.user as CreateUser)
-                    .subscribe((res)=>{
+                    .subscribe(()=>{
                             this.router.navigateByUrl('login')
-                            console.log(res)
+                           
                         })
                 }else{ 
                 alert('Senhas incorretas')

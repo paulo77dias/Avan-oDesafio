@@ -1,3 +1,4 @@
+import { UserLogin } from './../../common/user/dataModel/userLogin';
 import { UserCreated } from './../../common/user/dataModel/userCreated';
 import { CreateUser } from './../../common/user/dataModel/createUser';
 import { ApiConfig } from './../../blog/apiConfig';
@@ -6,14 +7,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable()
-export class RegisterService {
-        private readonly URL = ApiConfig.url + '/posts/register'
+export class LoginService {
+        private readonly URL = ApiConfig.url + '/posts/auth/login'
         constructor(private httpClient:HttpClient){}
 
 
-        public create(createUser:CreateUser):Observable<UserCreated>{
-              
-                return this.httpClient.post(this.URL,createUser)as Observable<CreateUser>; 
+        public login(userLogin:UserLogin):Observable<any>{
+                
+                return this.httpClient.post(this.URL,userLogin); 
                
         }
 }
